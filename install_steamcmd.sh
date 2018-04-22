@@ -15,8 +15,8 @@ echo "Executing server."
 cd ~/csgo
 if [ -z "$GSLT" ]; then
   echo "GSLT not specified."
-  ./srcds_run -game csgo -console -usercon +game_type $GAME_TYPE +game_mode $GAME_MODE +mapgroup $MAP_GROUP +map $MAP
+  ./srcds_run -game csgo -tickrate 128 -console -usercon +game_type $GAME_TYPE +game_mode $GAME_MODE +mapgroup $MAP_GROUP +map $MAP
 else
   echo "GSLT specified."
-  ./srcds_run -game csgo -console -usercon +game_type $GAME_TYPE +game_mode $GAME_MODE +mapgroup $MAP_GROUP +map $MAP +sv_setsteamaccount $GSLT -net_port_try 1
+  ./srcds_run -game csgo -tickrate 128 -console -usercon +game_type $GAME_TYPE +game_mode $GAME_MODE +mapgroup $MAP_GROUP +map $MAP +sv_setsteamaccount $GSLT -net_port_try 1
 fi
