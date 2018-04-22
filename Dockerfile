@@ -5,7 +5,7 @@ ADD . /docker
 CMD ["/sbin/my_init"]
 
 # APPS INSTALL && CONFIG
-RUN apt-get update && apt-get install -y lib32gcc1 wget
+RUN apt-get update && apt-get install -y lib32gcc1 wget lib32stdc++6
 RUN chmod +x /docker/install_steamcmd.sh && useradd -m steam
 RUN mkdir -p /home/steam/csgo/csgo/cfg 
 RUN chown steam:steam /home/steam -R

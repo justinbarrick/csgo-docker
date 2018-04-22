@@ -1,6 +1,6 @@
 #!/bin/sh
 STEAMCMD_FILE=steamcmd_installer
-mkdir ~/steamcmd
+mkdir ~/steamcmd/
 cd ~/steamcmd
 wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -O $STEAMCMD_FILE
 tar -xvzf $STEAMCMD_FILE
@@ -10,6 +10,7 @@ tar -xvzf $STEAMCMD_FILE
 sed -i "s/\#\!\/bin\/sh/\#\!\/bin\/bash/" ~/csgo/srcds_run
 # removing install file
 rm $STEAMCMD_FILE
+ln -s ~/steamcmd/linux32/ ~/.steam/sdk32
 # executing server
 echo "Executing server."
 cd ~/csgo
